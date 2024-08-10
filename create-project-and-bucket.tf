@@ -152,4 +152,5 @@ resource "google_storage_bucket" "project_b_bucket" {
   name     = "bkt-${module.project_b.pet_name}-${module.project_b.random_id}"
   location = "US"
   project  = module.project_b.project_id
+  force_destroy = true
 }
