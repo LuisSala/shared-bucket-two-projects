@@ -46,7 +46,7 @@ resource "google_compute_instance" "instance" {
 
 resource "google_project_iam_member" "bucket_user" {
   project = module.project_b.project_id
-  role    = "roles/storage.objectUser" # roles/storage.admin
+  role    = "roles/storage.objectUser" # This is enough for CRUD operations on the bucket. Use roles/storage.admin for full admin privileges
   member  = "serviceAccount:${data.google_compute_default_service_account.project_a_default_sa.email}"
 }
 
